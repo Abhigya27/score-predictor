@@ -2,7 +2,8 @@ import sys
 import pandas as pd
 from src.exception import CustomException
 from src.utils import load_object
-import os 
+import os
+import traceback
 
 
 class PredictPipeline:
@@ -22,7 +23,9 @@ class PredictPipeline:
             return preds
         
         except Exception as e:
-            raise CustomException(e,sys)
+            
+            traceback.print_exc()
+            raise
 
 
 
@@ -65,5 +68,7 @@ class CustomData:
             return pd.DataFrame(custom_data_input_dict)
 
         except Exception as e:
-            raise CustomException(e, sys)
+            
+            traceback.print_exc()
+            raise
 
