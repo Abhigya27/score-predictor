@@ -1,0 +1,35 @@
+[project]
+name = "mlproject"
+version = "0.1.0"
+description = "Student Performance Prediction using Machine Learning"
+readme = "README.md"
+requires-python = ">=3.12"
+
+authors = [
+    { name = "Abhihgya Narain" }
+]
+
+dependencies = [
+    "catboost>=1.2",
+    "dill>=0.3.9",
+    "flask>=3.1",
+    "matplotlib>=3.10",
+    "numpy>=2.3",
+    "pandas>=2.3",
+    "scikit-learn>=1.7",
+    "seaborn>=0.13",
+    "xgboost>=3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
